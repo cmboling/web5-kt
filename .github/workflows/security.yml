@@ -26,6 +26,11 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: jsondeps
+        run: |
+          gradle -Ijsondeps.gradle jsonDeps
+          ls -l
+
       - name: Run gradle deps
         run: |
           gradle :dependencies
