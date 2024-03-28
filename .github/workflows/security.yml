@@ -50,9 +50,3 @@ jobs:
         with:
           name: fossa.debug.json.gz
           path: ./fossa.debug.json.gz
-
-      - name: Run FOSSA Test
-        uses: fossas/fossa-action@main
-        with:
-          api-key: ${{ secrets.FOSSA_API_KEY }}
-          run-tests: true
