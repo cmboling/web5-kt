@@ -26,6 +26,11 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Run jsondeps.gradle
+        run: |
+          gradle -I$jsondeps.gradle jsonDeps
+          ls -l
+
       - name: Run FOSSA Scan
         uses: fossas/fossa-action@main
         with:
