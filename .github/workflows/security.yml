@@ -36,6 +36,11 @@ jobs:
           api-key: ${{secrets.FOSSA_API_KEY}}
           debug: true
 
+      - name: fossa list-targets + output deps
+        run: |
+          fossa list-targets
+          fossa analyze -o
+
       - uses: actions/upload-artifact@v3
         with:
           name: fossa.debug.json.gz
